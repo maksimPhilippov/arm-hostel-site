@@ -1,0 +1,24 @@
+{% extends "website/base.html" %}
+
+{% block content %}
+
+<section class="about-us">
+    <h1>{{ main_header }}</h1>
+    <p>{{ about_us_text_p1 }}</p>
+    <p>{{ about_us_text_p2 }}</p>
+    <p>{{ about_us_text_p3 }}</p>
+</section>
+<section class="conditions">
+    <h2>{{ conditions_header }}</h2>
+    <ul>
+        <li>{{ conditions_item1 }}</li>
+        <li>{{ conditions_item2 }}</li>
+        <li>{{ conditions_item3 }}</li>
+        <li>{{ conditions_item4 }}</li>
+    </ul>
+</section>
+<section class="rules">
+    <h2>{{ rules_header }}</h2>
+    <p>{{ rules_content }}</p>
+</section>
+{% endblock content %}
