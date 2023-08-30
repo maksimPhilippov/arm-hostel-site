@@ -1,4 +1,4 @@
-# from django.db import models
+from django.db import models
 
 # class Room(models.Model):
 #     name = models.CharField(50)
@@ -11,12 +11,13 @@
 #     image = models.ImageField()
 #     room = models.ForeignKey(Room, on_delete=)
 
-# class Tour(models.Model):
-#     name = models.CharField(50)
-#     description = models.TextField()
+class Tour(models.Model):
+    preview = models.ImageField(upload_to="media/")
+    name = models.CharField(max_length=50)
+    description = models.TextField()
 
-#     armName = models.CharField(50)
-#     armDescription = models.TextField()
+    armName = models.CharField(max_length=50)
+    armDescription = models.TextField()
 
-#     rusName = models.CharField(50)
-#     rusDescription = models.TextField()
+    rusName = models.CharField(max_length=50)
+    rusDescription = models.TextField()

@@ -17,6 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 from website.views import aboutus, book, contact, homePage, services, index
 
 urlpatterns = [
@@ -29,3 +32,5 @@ urlpatterns = [
     path('<slug:language>/services/', services),
     path('<slug:language>/contact/', contact),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

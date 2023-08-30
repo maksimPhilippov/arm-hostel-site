@@ -1,3 +1,7 @@
 from django.contrib import admin
+from website.models import Tour
 
-# Register your models here.
+class TourAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Tour, TourAdmin)

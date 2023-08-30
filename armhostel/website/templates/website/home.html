@@ -5,7 +5,21 @@
     <p>rooms placeholder</p>
 </section>
 <section class="tours">
-    <p>tours placeholder</p>
+    {% for item in tours %}
+        <div>
+            <img src="{{ BASIC_DIR }}{{ item.preview.url }}">
+            {% if language == 'eng' %}
+                <h2>{{ item.name }}</h2>
+                <p>{{ item.description }}</p>
+            {% elif language == 'rus' %}
+                <h2>{{ item.rusName }}</h2>
+                <p>{{ item.rusDescription }}</p>
+            {% elif language == 'arm' %}
+                <h2>{{ item.armName }}</h2>
+                <p>{{ item.armDescription }}</p>
+            {% endif %}
+        </div>
+    {% endfor %}
 </section>
 <section class="map">
 <iframe 

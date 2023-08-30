@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render
+from website.models import Tour
 
 from website.translations import translateAboutUs, translateBook, translateContacts, translateHome, translateServices
 
@@ -7,6 +8,7 @@ def index(request):
 
 def homePage(request, language):
     ctx = translateHome(language)
+    ctx.update({'tours': Tour.objects.all()})
     return render(request, 'website/home.html', context=ctx)
 
 def book(request, language):
