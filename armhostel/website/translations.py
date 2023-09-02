@@ -172,6 +172,24 @@ def translateContacts(language):
 def translateHome(language):
     if language == russian:
         return {
+            'room_list': 'Комнаты',
+            'watch_photo': 'Смотреть фото комнаты',
+        }
+    elif language == english:
+        return {
+            'room_list': 'Rooms',
+            'watch_photo': 'Watch room photos',
+        }
+    elif language == armenian:
+        return {
+            'room_list': 'Комнаты',
+            'watch_photo': 'Смотреть фото комнаты',
+        }
+
+@translateBase
+def translateServices(language):
+    if language == russian:
+        return {
 
         }
     elif language == english:
@@ -184,7 +202,7 @@ def translateHome(language):
         }
 
 @translateBase
-def translateServices(language):
+def translateRoom(language):
     if language == russian:
         return {
 

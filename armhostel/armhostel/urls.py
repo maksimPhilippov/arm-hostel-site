@@ -20,17 +20,21 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from website.views import aboutus, book, contact, homePage, services, index
+from website.views import aboutus, book, contact, homePage, services, index, reception, roomPhotoGallery, changeLanguage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
+    path('changelanguage/<slug:language>', changeLanguage),
+    path('reception/', reception),
     path('<slug:language>/', homePage, name = 'home'),
     path('<slug:language>/tour/', homePage),
     path('<slug:language>/book/', book),
     path('<slug:language>/aboutus/', aboutus),
     path('<slug:language>/services/', services),
     path('<slug:language>/contact/', contact),
+    path('<slug:language>/room/<int:roomId>', roomPhotoGallery)
+    
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

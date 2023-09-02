@@ -1,0 +1,7 @@
+{% extends "website/base.html" %}
+
+{% block content %}
+    {% for image in photos %}
+        <img src="{{ BASIC_DIR }}{{image.image.url}}">
+    {% endfor %}
+{% endblock content %}

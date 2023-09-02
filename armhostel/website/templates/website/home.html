@@ -2,7 +2,23 @@
 
 {% block content %}
 <section class="rooms">
-    <p>rooms placeholder</p>
+    <h2>{{ room_list}}</h2>
+    {% for item in rooms %}
+        <div class="room-item">
+            {% if language == 'eng' %}
+                <h3>{{ item.name}}</h3>
+                <p>Places: {{ item.places }}</p>
+            {% elif language == 'rus' %}
+                <h3>{{ item.rusName}}</h3>
+                <p>Мест в комнате: {{ item.places }}</p>
+            {% elif language == 'arm' %}
+                <h3>{{ item.armName}}</h3>
+                <p>Мест в комнате: {{ item.places }}</p>
+            {% endif %}
+            <p><a href="/{{ language }}/room/{{ item.id }}">{{ watch_photo }}</a></p>
+            
+        </div>
+    {% endfor %}
 </section>
 <section class="tours">
     {% for item in tours %}
